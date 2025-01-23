@@ -27,17 +27,17 @@ def add(x: float, y: float) -> float:
 
 def neg(x: float) -> float:
     "$f(x) = -x$"
-    return -x
+    return float(-x)
 
 
 def lt(x: float, y: float) -> float:
     "$f(x) =$ 1.0 if x is less than y else 0.0"
-    return 1.0 if x < y else 0.0
+    return float(x < y)
 
 
 def eq(x: float, y: float) -> float:
     "$f(x) =$ 1.0 if x is equal to y else 0.0"
-    return abs(x - y) <= 1e-8
+    return float(abs(x - y) <= 1e-8)
 
 
 def max(x: float, y: float) -> float:
@@ -47,7 +47,7 @@ def max(x: float, y: float) -> float:
 
 def is_close(x: float, y: float) -> float:
     "$f(x) = |x - y| < 1e-2$"
-    return abs(x - y) <= 1e-2
+    return float(abs(x - y) <= 1e-2)
 
 
 def sigmoid(x: float) -> float:
@@ -76,7 +76,7 @@ def relu(x: float) -> float:
     """
     if x > 0:
         return x
-    return 0
+    return 0.0
 
 
 EPS = 1e-6
